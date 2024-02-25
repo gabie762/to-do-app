@@ -11,8 +11,14 @@ const config: Config = {
       backgroundImage: {},
     },
     colors: {
-      'white': '#fefefe',
-      'terracota': '#de6c5c',
+      white: "#fefefe",
+      terracota: "#de6c5c",
+      black: "#000",
+      rose: "#ffcbdb",
+      cyan: "#00ffff",
+    },
+    fontFamily: {
+      patrick: ['"Patrick Hand"'],
     },
   },
   plugins: [],
