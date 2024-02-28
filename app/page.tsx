@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import Search from "@/components/criarTarefa";
 import Footer from "@/components/footer";
 import ListarTarefas from "@/components/listarTarefas";
-import Search from "@/components/search";
 
 export default function Home() {
   return (
@@ -21,6 +21,7 @@ export default function Home() {
         </div>
 
         <div className="relative min-h-[28rem] w-96 border-2 border-black rounded-xl p-1 bg-terracota font-patrick">
+
           <Search />
           <ListarTarefas />
           <Footer />
