@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ListarTarefas from "./listarTarefas";
 
 export function CriarTarefa() {
   let i = 2;
@@ -23,14 +24,17 @@ export function CriarTarefa() {
       if(novaTarefa){
         e.preventDefault();
         console.log(novaTarefa);
+
         const tarefaObj = {
           id: i++,
           tarefa: novaTarefa,
           completa: false,
         };
+        
         setTarefas([tarefaObj, ...tarefas]);
         console.log(setTarefas);
-        setNovaTarefa("")};
+        setNovaTarefa("");
+        ListarTarefas(tarefas);}
     };
 
   return (
