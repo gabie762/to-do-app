@@ -16,6 +16,7 @@ const config: Config = {
       black: "#000",
       rose: "#ffcbdb",
       cyan: "#00ffff",
+      gray: "#475569",
     },
     fontFamily: {
       patrick: ['"Patrick Hand"'],

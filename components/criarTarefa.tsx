@@ -1,12 +1,13 @@
-"use client";
+/*"use client";
 
 import { useState } from "react";
+import ITarefas from "./interface";
 import ListarTarefas from "./listarTarefas";
 
-export function CriarTarefa() {
+export const CriarTarefa = () => {
   let i = 2;
   const[novaTarefa, setNovaTarefa] = useState("");
-  const[tarefas, setTarefas] = useState(
+  const[tarefas, setTarefas] = useState<ITarefas[]>(
     [
         {
             id: 1,
@@ -20,25 +21,22 @@ export function CriarTarefa() {
         }
     ]);
 
-    const submitNovaTarefa = (e: { preventDefault: () => void; })=>{
-      if(novaTarefa){
-        e.preventDefault();
-        console.log(novaTarefa);
+  const addTarefa = (tarefa: string) => {
+    setTarefas([{id: i++, tarefa: tarefa, completa: false}, ...tarefas]);
+    
+  }
 
-        const tarefaObj = {
-          id: i++,
-          tarefa: novaTarefa,
-          completa: false,
-        };
-        
-        setTarefas([tarefaObj, ...tarefas]);
-        console.log(setTarefas);
-        setNovaTarefa("");
-        ListarTarefas(tarefas);}
-    };
+  const submitNovaTarefa = (e: { preventDefault: () => void; })=>{
+      if(novaTarefa){
+      e.preventDefault();
+      addTarefa(novaTarefa);
+      setNovaTarefa("");
+      <ListarTarefas lista={tarefas}/>
+    }
+  };
 
   return (
-    <div className="relative content-center {/*bg-rose*/}">
+    <div className="relative content-center {/*bg-rose*}">
       <form onSubmit={submitNovaTarefa} className="relative flex space-x-1.5 justify-center">
         <input
           type="text"
@@ -47,7 +45,7 @@ export function CriarTarefa() {
           value={novaTarefa}
           onChange={(e) => setNovaTarefa(e.target.value)}
         />
-        <button type="submit" className=" p-1 rounded bg-black text-white">
+        <button type="submit" className="p-1 rounded bg-black text-white">
           Adicionar
         </button>
       </form>
@@ -55,4 +53,4 @@ export function CriarTarefa() {
   );
 }
 
-export default CriarTarefa;
+export default CriarTarefa;*/

@@ -1,6 +1,6 @@
 "use client";
 
-export function StatusTarefas() {
+const StatusTarefas = () => {
   return (
     <div className="relative w-fit space-x-1 flex items-center space-x-1.5">
       <div className="relative">
@@ -9,6 +9,7 @@ export function StatusTarefas() {
           name="estado"
           id="todas"
           className="hidden peer"
+          //onClick={}
         ></input>
         <label htmlFor="todas" className="peer-checked:font-bold">
           Todas
@@ -20,6 +21,7 @@ export function StatusTarefas() {
           name="estado"
           id="fazer"
           className="hidden peer"
+          //onClick={}
         ></input>
         <label htmlFor="fazer" className="peer-checked:font-bold">
           A fazer
@@ -31,6 +33,7 @@ export function StatusTarefas() {
           name="estado"
           id="feitas"
           className="hidden peer"
+          //onClick={}
         ></input>
         <label htmlFor="feitas" className="peer-checked:font-bold">
           Feitas
@@ -38,6 +41,6 @@ export function StatusTarefas() {
       </div>
     </div>
   );
-}
+};
 
 export default StatusTarefas;

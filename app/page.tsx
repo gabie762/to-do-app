@@ -1,13 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-import Search from "@/components/criarTarefa";
 import Footer from "@/components/footer";
-import ListarTarefas from "@/components/listarTarefas";
+import HandlerTarefas from "@/components/handlerTarefas";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <div>
         <div className="flex flex-nowrap space-x-1">
+          <ToastContainer />
           <h1 className="text-3xl text-black">PraFazê!</h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,15 +22,9 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="relative min-h-[28rem] w-96 border-2 border-black rounded-xl p-1 bg-terracota font-patrick">
-
-          <Search />
-          <ListarTarefas />
+        <div className="relative min-h-[28rem] w-96 border-2 border-black pt-2 rounded-xl font-patrick">
+          <HandlerTarefas />
           <Footer />
-          {/* <ProgressBar />
-              <ListarTarefas/>
-              <Footer/>
-           */}
         </div>
       </div>
     </main>
