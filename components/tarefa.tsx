@@ -11,7 +11,8 @@ export const Tarefa = ({ tarefa, statusTarefa }: Props) => {
       <input
         id={tarefa.id.toString()}
         type="checkbox"
-        className="static relative border-terracota w-4 h-4 rounded checked:accent-terracota peer"
+        className="static relative border-terracota w-4 h-4 rounded checked:accent-terracota peer active:accent-terracota"
+        //checked={tarefa.completa}
         onClick={() => statusTarefa(tarefa.id)}
       />
       <label

@@ -1,6 +1,11 @@
 "use client";
 
-const StatusTarefas = () => {
+interface Props {
+  status: string;
+  filtroTarefas(arg: string): void;
+}
+
+const StatusTarefas = ({ status, filtroTarefas }: Props) => {
   return (
     <div className="relative w-fit space-x-1 flex items-center space-x-1.5">
       <div className="relative">
@@ -9,7 +14,7 @@ const StatusTarefas = () => {
           name="estado"
           id="Todas"
           className="hidden peer"
-          //onClick={() => filtrar todas}
+          onClick={() => filtroTarefas("Todas")}
         ></input>
         <label htmlFor="Todas" className="peer-checked:font-bold">
           Todas
@@ -21,7 +26,7 @@ const StatusTarefas = () => {
           name="estado"
           id="Fazer"
           className="hidden peer"
-          //onClick={() => filtrar as para fazer}
+          onClick={() => filtroTarefas("Fazer")}
         ></input>
         <label htmlFor="Fazer" className="peer-checked:font-bold">
           A fazer
@@ -33,7 +38,7 @@ const StatusTarefas = () => {
           name="estado"
           id="Feitas"
           className="hidden peer"
-          //onClick={() => feitas}
+          onClick={() => filtroTarefas("Feitas")}
         ></input>
         <label htmlFor="Feitas" className="peer-checked:font-bold">
           Feitas

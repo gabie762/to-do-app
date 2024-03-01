@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import ITarefas from "./interface";
+import CleanAllBtn from "./limparCompletas";
+import { ListarTarefas } from "./listarTarefas";
+import StatusTarefas from "./statusTarefa";
 import { Tarefa } from "./tarefa";
 let i = 2;
 
@@ -21,6 +24,8 @@ export const HandlerTarefas = () => {
       completa: false,
     },
   ]);
+
+  const tarefasRestantes = tarefas.filter((tarefa) => !tarefa.completa).length;
 
   const addTarefa = (tarefa: string) => {
     i++;
@@ -42,8 +47,40 @@ export const HandlerTarefas = () => {
     }
   };
 
-  const filtroTarefas = (filtro: string) => {
+  const filtrarTarefas = (filtro: string) => {
     const copiaTarefas = [...tarefas];
+    setFiltroStatus(filtro);
+    if (filtro === "Todas") {
+      {
+        copiaTarefas.map((tarefa) => (
+          <Tarefa
+            key={tarefa.id}
+            tarefa={tarefa}
+            statusTarefa={handleStatusTarefa}
+          />
+        ));
+      }
+    } else if (filtro === "Fazer") {
+      copiaTarefas
+        .filter((tarefa) => !tarefa.completa)
+        .map((tarefa) => (
+          <Tarefa
+            key={tarefa.id}
+            tarefa={tarefa}
+            statusTarefa={handleStatusTarefa}
+          />
+        ));
+    } else {
+      copiaTarefas
+        .filter((tarefa) => tarefa.completa)
+        .map((tarefa) => (
+          <Tarefa
+            key={tarefa.id}
+            tarefa={tarefa}
+            statusTarefa={handleStatusTarefa}
+          />
+        ));
+    }
   };
 
   const handleStatusTarefa = (id: number) => {
@@ -84,14 +121,25 @@ export const HandlerTarefas = () => {
       </form>
       <p className="flex center bg-rose">PROGRESS BAR AQUI</p>
       <div className="to-do-list static flex-col p-3 space-y-3 h-[21rem] overflow-y-auto">
-        {/*<ToDoList(tarefas)*/}
-        {tarefas.map((tarefa) => (
+        <ListarTarefas
+          status={filtroStatus}
+          tarefas={tarefas}
+          handleStatusTarefa={handleStatusTarefa}
+        />
+        {/*tarefas.map((tarefa) => (
           <Tarefa
             key={tarefa.id}
             tarefa={tarefa}
             statusTarefa={handleStatusTarefa}
           />
-        ))}
+        ))*/}
+      </div>
+      <div className="flex border-t-2 border-t-black border-opacity-50 text-black text-opacity-70 inset-x-0 bottom-0 h-12 p-1 items-center justify-center space-x-3">
+        <div className="flex items-center">
+          <h1>{tarefasRestantes} itens restantes</h1>
+        </div>
+        <StatusTarefas status={filtroStatus} filtroTarefas={filtrarTarefas} />
+        <CleanAllBtn />
       </div>
     </div>
   );

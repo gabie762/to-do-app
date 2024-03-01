@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import Footer from "@/components/footer";
 import HandlerTarefas from "@/components/handlerTarefas";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -24,7 +23,6 @@ export default function Home() {
 
         <div className="relative min-h-[28rem] w-96 border-2 border-black pt-2 rounded-xl font-patrick">
           <HandlerTarefas />
-          <Footer />
         </div>
       </div>
     </main>
