@@ -7,11 +7,11 @@ const StatusTarefas = () => {
         <input
           type="radio"
           name="estado"
-          id="todas"
+          id="Todas"
           className="hidden peer"
-          //onClick={}
+          //onClick={() => filtrar todas}
         ></input>
-        <label htmlFor="todas" className="peer-checked:font-bold">
+        <label htmlFor="Todas" className="peer-checked:font-bold">
           Todas
         </label>
       </div>
@@ -19,11 +19,11 @@ const StatusTarefas = () => {
         <input
           type="radio"
           name="estado"
-          id="fazer"
+          id="Fazer"
           className="hidden peer"
-          //onClick={}
+          //onClick={() => filtrar as para fazer}
         ></input>
-        <label htmlFor="fazer" className="peer-checked:font-bold">
+        <label htmlFor="Fazer" className="peer-checked:font-bold">
           A fazer
         </label>
       </div>
@@ -31,11 +31,11 @@ const StatusTarefas = () => {
         <input
           type="radio"
           name="estado"
-          id="feitas"
+          id="Feitas"
           className="hidden peer"
-          //onClick={}
+          //onClick={() => feitas}
         ></input>
-        <label htmlFor="feitas" className="peer-checked:font-bold">
+        <label htmlFor="Feitas" className="peer-checked:font-bold">
           Feitas
         </label>
       </div>

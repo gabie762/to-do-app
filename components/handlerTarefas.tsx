@@ -8,7 +8,7 @@ let i = 2;
 
 export const HandlerTarefas = () => {
   const [novaTarefa, setNovaTarefa] = useState("");
-  const [filtro, setFiltro] = useState("Todos");
+  const [filtroStatus, setFiltroStatus] = useState("Todas");
   const [tarefas, setTarefas] = useState<ITarefas[]>([
     {
       id: 1,
@@ -40,6 +40,10 @@ export const HandlerTarefas = () => {
     } else {
       e.preventDefault();
     }
+  };
+
+  const filtroTarefas = (filtro: string) => {
+    const copiaTarefas = [...tarefas];
   };
 
   const handleStatusTarefa = (id: number) => {
@@ -79,7 +83,8 @@ export const HandlerTarefas = () => {
         </button>
       </form>
       <p className="flex center bg-rose">PROGRESS BAR AQUI</p>
-      <div className="static flex-col p-3 space-y-3 h-[21rem] overflow-y-auto">
+      <div className="to-do-list static flex-col p-3 space-y-3 h-[21rem] overflow-y-auto">
+        {/*<ToDoList(tarefas)*/}
         {tarefas.map((tarefa) => (
           <Tarefa
             key={tarefa.id}
