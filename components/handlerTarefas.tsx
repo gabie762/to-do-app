@@ -126,13 +126,6 @@ export const HandlerTarefas = () => {
           tarefas={tarefas}
           handleStatusTarefa={handleStatusTarefa}
         />
-        {/*tarefas.map((tarefa) => (
-          <Tarefa
-            key={tarefa.id}
-            tarefa={tarefa}
-            statusTarefa={handleStatusTarefa}
-          />
-        ))*/}
       </div>
       <div className="flex border-t-2 border-t-black border-opacity-50 text-black text-opacity-70 inset-x-0 bottom-0 h-12 p-1 items-center justify-center space-x-3">
         <div className="flex items-center">
