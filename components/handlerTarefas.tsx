@@ -33,7 +33,7 @@ export const HandlerTarefas = () => {
   };
 
   const notificacao = (mensagem: string) => {
-    toast.success(mensagem, { autoClose: 1000, position: "top-center" });
+    toast.success(mensagem, { autoClose: 1250, position: "top-center" });
   };
 
   const submitNovaTarefa = (e: { preventDefault: () => void }) => {
