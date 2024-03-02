@@ -1,13 +1,22 @@
 "use client";
 
-export function CleanAllBtn() {
+interface Props {
+  cleanAll(arg: number | boolean): void;
+  typeBool: boolean;
+}
+
+const CleanAllBtn = ({ cleanAll, typeBool }: Props) => {
   return (
     <div>
-      <button type="submit" className="border p-1 rounded">
+      <button
+        type="submit"
+        className="border p-1 rounded"
+        onClick={() => cleanAll(typeBool)}
+      >
         Limpar completas
       </button>
     </div>
   );
-}
+};
 
 export default CleanAllBtn;

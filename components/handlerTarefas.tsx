@@ -33,7 +33,7 @@ export const HandlerTarefas = () => {
   };
 
   const notificacao = (mensagem: string) => {
-    toast.success(mensagem, { autoClose: 2500, position: "top-center" });
+    toast.success(mensagem, { autoClose: 1000, position: "top-center" });
   };
 
   const submitNovaTarefa = (e: { preventDefault: () => void }) => {
@@ -57,6 +57,7 @@ export const HandlerTarefas = () => {
             key={tarefa.id}
             tarefa={tarefa}
             statusTarefa={handleStatusTarefa}
+            removeTarefa={removeTarefa}
           />
         ));
       }
@@ -68,6 +69,7 @@ export const HandlerTarefas = () => {
             key={tarefa.id}
             tarefa={tarefa}
             statusTarefa={handleStatusTarefa}
+            removeTarefa={removeTarefa}
           />
         ));
     } else {
@@ -78,6 +80,7 @@ export const HandlerTarefas = () => {
             key={tarefa.id}
             tarefa={tarefa}
             statusTarefa={handleStatusTarefa}
+            removeTarefa={removeTarefa}
           />
         ));
     }
@@ -94,6 +97,27 @@ export const HandlerTarefas = () => {
       }
     });
     setTarefas(copiaTarefas);
+  };
+
+  const removeTarefa = (identificador: number | boolean) => {
+    //console.log(identifica);
+    if (typeof identificador == "boolean") {
+      if (tarefas.filter((tarefa) => tarefa.completa).length === 0) {
+        return;
+      }
+      const copiaTarefas = tarefas.filter((tarefa) =>
+        tarefa.completa ? null : tarefa
+      );
+      setTarefas(copiaTarefas);
+      notificacao("Tarefas completas apagadas!");
+    } else {
+      console.log("chegay tbm");
+      const copiaTarefas = tarefas.filter((tarefa) =>
+        tarefa.id !== identificador ? tarefa : null
+      );
+      setTarefas(copiaTarefas);
+      notificacao("Tarefa apagada!");
+    }
   };
 
   return (
@@ -125,6 +149,7 @@ export const HandlerTarefas = () => {
           status={filtroStatus}
           tarefas={tarefas}
           handleStatusTarefa={handleStatusTarefa}
+          removeTarefa={removeTarefa}
         />
       </div>
       <div className="flex border-t-2 border-t-black border-opacity-50 text-black text-opacity-70 inset-x-0 bottom-0 h-12 p-1 items-center justify-center space-x-3">
@@ -132,7 +157,7 @@ export const HandlerTarefas = () => {
           <h1>{tarefasRestantes} itens restantes</h1>
         </div>
         <StatusTarefas status={filtroStatus} filtroTarefas={filtrarTarefas} />
-        <CleanAllBtn />
+        <CleanAllBtn cleanAll={removeTarefa} typeBool={true} />
       </div>
     </div>
   );
