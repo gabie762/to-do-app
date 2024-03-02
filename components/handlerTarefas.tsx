@@ -139,12 +139,12 @@ export const HandlerTarefas = () => {
         <button
           type="submit"
           onClick={(e) => submitNovaTarefa(e)}
-          className="p-1 rounded bg-terracota text-white"
+          className="p-2 rounded bg-terracota text-white"
         >
           Adicionar
         </button>
       </form>
-      <ProgressBar />
+      <ProgressBar progresso={50} />
       <div className="to-do-list static flex-col p-3 space-y-3 h-[21rem] overflow-y-auto">
         <ListarTarefas
           status={filtroStatus}
