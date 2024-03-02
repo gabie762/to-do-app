@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import ITarefas from "./interface";
 import CleanAllBtn from "./limparCompletas";
 import { ListarTarefas } from "./listarTarefas";
+import ProgressBar from "./progressBar";
 import StatusTarefas from "./statusTarefa";
 import { Tarefa } from "./tarefa";
 let i = 2;
@@ -143,7 +144,7 @@ export const HandlerTarefas = () => {
           Adicionar
         </button>
       </form>
-      <p className="flex center bg-rose">PROGRESS BAR AQUI</p>
+      <ProgressBar />
       <div className="to-do-list static flex-col p-3 space-y-3 h-[21rem] overflow-y-auto">
         <ListarTarefas
           status={filtroStatus}
