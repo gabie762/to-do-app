@@ -9,7 +9,7 @@ interface Props {
 
 export const Tarefa = ({ tarefa, statusTarefa, removeTarefa }: Props) => {
   return (
-    <li className="flex flex-wrap gap-1 items-center border p-1 justify-between">
+    <li className="flex flex-wrap gap-1 items-center border border-gray p-1 justify-between">
       <div className="flex flex-wrap gap-1.5 items-center">
         <input
           id={tarefa.id.toString()}
@@ -20,7 +20,7 @@ export const Tarefa = ({ tarefa, statusTarefa, removeTarefa }: Props) => {
         />
         <label
           htmlFor={tarefa.id.toString()}
-          className="cursor-pointer text-gray peer-checked:line-through peer-checked:text-terracota peer-checked:text-opacity-50"
+          className="cursor-pointer text-gray peer-checked:line-through peer-checked:text-terracota peer-checked:text-opacity-50 dark:text-white dark:peer-checked:text-opacity-75"
         >
           {tarefa.tarefa}
         </label>

@@ -139,7 +139,7 @@ export const HandlerTarefas = () => {
         <input
           type="text"
           placeholder="Sou uma tarefa :)"
-          className="relative h-10 w-[15rem] p-2 border rounded"
+          className="relative h-10 w-[15rem] p-2 border rounded text-gray"
           value={novaTarefa}
           onChange={(e) => setNovaTarefa(e.target.value)}
         />
@@ -160,8 +160,8 @@ export const HandlerTarefas = () => {
           removeTarefa={removeTarefa}
         />
       </div>
-      <div className="flex border-t-2 border-t-black border-opacity-50 text-black text-opacity-70 inset-x-0 bottom-0 h-12 p-1 items-center justify-center space-x-3">
-        <div className="flex items-center">
+      <div className="flex border-t-2 border-t-black border-opacity-50 text-black text-opacity-70 inset-x-0 bottom-0 h-12 p-1 items-center justify-center space-x-3 dark:border-white">
+        <div className="flex items-center dark:text-white">
           <h1>{tarefasRestantes} itens restantes</h1>
         </div>
         <StatusTarefas status={filtroStatus} filtroTarefas={filtrarTarefas} />

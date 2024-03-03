@@ -7,7 +7,7 @@ interface Props {
 
 const StatusTarefas = ({ status, filtroTarefas }: Props) => {
   return (
-    <div className="relative w-fit space-x-1 flex items-center space-x-1.5">
+    <div className="relative w-fit space-x-1 flex items-center space-x-1.5 dark:text-white">
       <div className="relative">
         <input
           type="radio"

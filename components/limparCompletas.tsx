@@ -10,7 +10,7 @@ const CleanAllBtn = ({ cleanAll, typeBool }: Props) => {
     <div>
       <button
         type="submit"
-        className="border p-1 rounded"
+        className="border p-1 rounded dark:text-white"
         onClick={() => cleanAll(typeBool)}
       >
         Limpar completas
