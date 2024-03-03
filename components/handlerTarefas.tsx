@@ -37,6 +37,10 @@ export const HandlerTarefas = () => {
     toast.success(mensagem, { autoClose: 1250, position: "top-center" });
   };
 
+  const progressoPorcentagem =
+    tarefas.length &&
+    (100 * tarefas.filter((tarefa) => tarefa.completa).length) / tarefas.length;
+
   const submitNovaTarefa = (e: { preventDefault: () => void }) => {
     if (novaTarefa) {
       e.preventDefault();
@@ -101,7 +105,6 @@ export const HandlerTarefas = () => {
   };
 
   const removeTarefa = (identificador: number | boolean) => {
-    //console.log(identifica);
     if (typeof identificador == "boolean") {
       if (tarefas.filter((tarefa) => tarefa.completa).length === 0) {
         return;
@@ -144,7 +147,7 @@ export const HandlerTarefas = () => {
           Adicionar
         </button>
       </form>
-      <ProgressBar progresso={50} />
+      <ProgressBar progresso={progressoPorcentagem} />
       <div className="to-do-list static flex-col p-3 space-y-3 h-[21rem] overflow-y-auto">
         <ListarTarefas
           status={filtroStatus}
