@@ -34,7 +34,12 @@ export const HandlerTarefas = () => {
   };
 
   const notificacao = (mensagem: string) => {
-    toast.success(mensagem, { autoClose: 1250, position: "top-center" });
+    toast.success(mensagem, {
+      autoClose: 1225,
+      position: "top-center",
+      closeOnClick: true,
+      hideProgressBar: true,
+    });
   };
 
   const progressoPorcentagem =
@@ -115,7 +120,6 @@ export const HandlerTarefas = () => {
       setTarefas(copiaTarefas);
       notificacao("Tarefas completas apagadas!");
     } else {
-      console.log("chegay tbm");
       const copiaTarefas = tarefas.filter((tarefa) =>
         tarefa.id !== identificador ? tarefa : null
       );
