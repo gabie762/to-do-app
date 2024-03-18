@@ -6,12 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 dark:bg-black dark:text-white">
+    <main className="bg-white flex min-h-screen flex-col items-center justify-center p-24 dark:bg-black dark:text-white">
       <div>
         <div className="flex justify-between">
           <div className="flex flex-nowrap space-x-1">
             <ToastContainer />
-            <h1 className="text-3xl">PraFazê!</h1>
+            <h1 className="text-3xl text-black dark:text-white">PraFazê!</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="35"
